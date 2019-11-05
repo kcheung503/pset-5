@@ -23,7 +23,7 @@ public class ProblemSet5 {
 
       System.out.println(ps.surroundMe("leCheu", "Kyng"));
       System.out.println(ps.endsMeet("Cheaw aung", 3));
-      System.out.println(ps.middleMan("E", "C"));
+      System.out.println(ps.middleMan("BOOOM"));
       // System.out.println(ps.isCentered("E"));
       // System.out.println(ps.countMe("C"));
       // System.out.println(ps.triplets("H"));
@@ -69,18 +69,25 @@ public class ProblemSet5 {
         return text;
       }
     }
-    //
-    // /*
-    // * Exercise 3.
-    // *
-    // * Given a string, return a new string using the middle three characters of text.
-    // */
-    //
-    // public String middleMan(String text) {
-    //
-    // }
-    //
-    // /*
+
+    /*
+    * Exercise 3.
+    *
+    * Given a string, return a new string using the middle three characters of text.
+    */
+
+    public String middleMan(String text) {
+      if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3) {
+        int startingPoint = (text.length() - 3) / 2;
+        String middleString = text.substring(startingPoint, startingPoint + 3);
+
+        return middleString;
+      } else {
+       return text;
+      }
+    }
+
+    /*
     // * Exercise 4.
     // *
     // * Given two strings, determine whether or not target is equivalent to the middle
