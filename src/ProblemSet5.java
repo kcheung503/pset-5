@@ -22,15 +22,15 @@ public class ProblemSet5 {
       ProblemSet5 ps = new ProblemSet5();
 
       System.out.println(ps.surroundMe("leCheu", "Kyng"));
-      System.out.println(ps.endsMeet("L"));
+      System.out.println(ps.endsMeet("Cheaw aung", 3));
       System.out.println(ps.middleMan("E", "C"));
-      System.out.println(ps.isCentered("E"));
-      System.out.println(ps.countMe("C"));
-      System.out.println(ps.triplets("H"));
-      System.out.println(ps.addMe("E"));
-      System.out.println(ps.sequence("U"));
-      System.out.println(ps.intertwine("N"));
-      System.out.println(ps.isPalindrome("G"));
+      // System.out.println(ps.isCentered("E"));
+      // System.out.println(ps.countMe("C"));
+      // System.out.println(ps.triplets("H"));
+      // System.out.println(ps.addMe("E"));
+      // System.out.println(ps.sequence("U"));
+      // System.out.println(ps.intertwine("N"));
+      // System.out.println(ps.isPalindrome("G"));
     }
 
     /*
@@ -57,9 +57,18 @@ public class ProblemSet5 {
     * and last n characters of text.
     */
 
-    // public String endsMeet(String text, int n) {
-    //
-    // }
+    public String endsMeet(String text, int n) {
+      if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
+        String firstNCharacters = text.substring(0, n);
+        String lastNCharacters = text.substring(text.length() - n);
+
+        String firstAndLastNCharacters = firstNCharacters + lastNCharacters;
+
+        return firstAndLastNCharacters;
+      } else {
+        return text;
+      }
+    }
     //
     // /*
     // * Exercise 3.
