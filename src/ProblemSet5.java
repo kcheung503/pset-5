@@ -27,7 +27,7 @@ public class ProblemSet5 {
       System.out.println(ps.isCentered("STEPHEN", "EPH"));
       System.out.println(ps.countMe("I am an example sentence", 'e'));
       System.out.println(ps.triplets("ccccbbbbaaaa"));
-      // System.out.println(ps.addMe("E"));
+      System.out.println(ps.addMe("oof couch 123456"));
       // System.out.println(ps.sequence("U"));
       // System.out.println(ps.intertwine("N"));
       // System.out.println(ps.isPalindrome("G"));
@@ -168,17 +168,28 @@ public class ProblemSet5 {
       return numTriplets;
     }
 
-    // /*
-    // * Exercise 7.
-    // *
-    // * Given a string, compute the sum of the digits in text.
-    // */
-    //
-    // public long addMe(String text) {
-    //
-    // }
-    //
-    // /*
+    /*
+    * Exercise 7.
+    *
+    * Given a string, compute the sum of the digits in text.
+    */
+
+    public long addMe(String text) {
+      int digitSum = 0;
+
+      if (text != null) {
+        for (int i = 0; i < text.length(); i++) {
+          if (Character.isDigit(text.charAt(i))) {
+            digitSum = digitSum + (Character.getNumericValue(text.charAt(i)));
+          }
+        }
+      } else {
+        digitSum = -1;
+      }
+      return digitSum;
+    }
+
+    /*
     // * Exercise 8.
     // *
     // * Given a string, compute the length of the longest sequence.
