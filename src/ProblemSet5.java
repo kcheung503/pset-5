@@ -24,7 +24,7 @@ public class ProblemSet5 {
       System.out.println(ps.surroundMe("leCheu", "Kyng"));
       System.out.println(ps.endsMeet("Cheaw aung", 3));
       System.out.println(ps.middleMan("BOOOM"));
-      // System.out.println(ps.isCentered("E"));
+      System.out.println(ps.isCentered("STEPHEN", "EPH"));
       // System.out.println(ps.countMe("C"));
       // System.out.println(ps.triplets("H"));
       // System.out.println(ps.addMe("E"));
@@ -88,17 +88,28 @@ public class ProblemSet5 {
     }
 
     /*
-    // * Exercise 4.
-    // *
-    // * Given two strings, determine whether or not target is equivalent to the middle
-    // * three characters of text.
-    // */
-    //
-    // public boolean isCentered(String text, String target) {
-    //
-    // }
-    //
-    // /*
+    * Exercise 4.
+    *
+    * Given two strings, determine whether or not target is equivalent to the middle
+    * three characters of text.
+    */
+
+    public boolean isCentered(String text, String target) {
+      if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3 && !target.equals(null) && target.length() == 3) {
+            int startingPoint = (text.length() - 3) / 2;
+            String middleString = text.substring(startingPoint, startingPoint + 3);
+
+            if (middleString.equals(target)) {
+              return true;
+            } else {
+              return false;
+            }
+          } else {
+            return false;
+          }
+    }
+
+    /*
     // * Exercise 5.
     // *
     // * Given a string and a character, compute the number of words that end in suffix.
