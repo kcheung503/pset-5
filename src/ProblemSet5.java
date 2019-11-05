@@ -25,7 +25,7 @@ public class ProblemSet5 {
       System.out.println(ps.endsMeet("Cheaw aung", 3));
       System.out.println(ps.middleMan("BOOOM"));
       System.out.println(ps.isCentered("STEPHEN", "EPH"));
-      // System.out.println(ps.countMe("C"));
+      System.out.println(ps.countMe("I am an example sentence", 'e'));
       // System.out.println(ps.triplets("H"));
       // System.out.println(ps.addMe("E"));
       // System.out.println(ps.sequence("U"));
@@ -59,12 +59,12 @@ public class ProblemSet5 {
 
     public String endsMeet(String text, int n) {
       if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
-        String firstNCharacters = text.substring(0, n);
-        String lastNCharacters = text.substring(text.length() - n);
+        String firstChars = text.substring(0, n);
+        String lastChars = text.substring(text.length() - n);
 
-        String firstAndLastNCharacters = firstNCharacters + lastNCharacters;
+        String firstAndLastChars = firstChars + lastChars;
 
-        return firstAndLastNCharacters;
+        return firstAndLastChars;
       } else {
         return text;
       }
@@ -110,15 +110,34 @@ public class ProblemSet5 {
     }
 
     /*
-    // * Exercise 5.
-    // *
-    // * Given a string and a character, compute the number of words that end in suffix.
-    // */
-    //
-    // public int countMe(String text, char suffix) {
-    //
-    // }
-    //
+    * Exercise 5.
+    *
+    * Given a string and a character, compute the number of words that end in suffix.
+    */
+
+    public int countMe(String text, char suffix) {
+      int numWords = 0;
+
+      if (!text.equals(null) && ((suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z'))) {
+        boolean firstWord = true;
+        boolean newWord;
+        for (int i = 0; i < text.length(); i++) {
+          if (text.charAt(i) == ' ') {
+            if(text.charAt(i - 1) == suffix) {
+              numWords++;
+            }
+          } else if (i == text.length() - 1) {
+            if (text.charAt(i - 1) == suffix) {
+              numWords++;
+            }
+          }
+        }
+      } else {
+        numWords = -1;
+      }
+      return numWords;
+    }
+
     // /*
     // * Exercise 6.
     // *
