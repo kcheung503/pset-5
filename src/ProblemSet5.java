@@ -26,7 +26,7 @@ public class ProblemSet5 {
       System.out.println(ps.middleMan("BOOOM"));
       System.out.println(ps.isCentered("STEPHEN", "EPH"));
       System.out.println(ps.countMe("I am an example sentence", 'e'));
-      // System.out.println(ps.triplets("H"));
+      System.out.println(ps.triplets("ccccbbbbaaaa"));
       // System.out.println(ps.addMe("E"));
       // System.out.println(ps.sequence("U"));
       // System.out.println(ps.intertwine("N"));
@@ -138,16 +138,36 @@ public class ProblemSet5 {
       return numWords;
     }
 
-    // /*
-    // * Exercise 6.
-    // *
-    // * Given a string, compute the number of triplets in text.
-    // */
-    //
-    // public int triplets(String text) {
-    //
-    // }
-    //
+    /*
+    * Exercise 6.
+    *
+    * Given a string, compute the number of triplets in text.
+    */
+
+    public int triplets(String text) {
+      int numTriplets = 0;
+
+      if (text != null) {
+        for (char tripleLetter = 'a'; tripleLetter <= 'z'; tripleLetter++) {
+          for (int i = 0; i < text.length() - 2; i++) {
+            if (text.charAt(i) == tripleLetter && text.charAt(i + 1) == tripleLetter && text.charAt(i + 2) == tripleLetter) {
+              numTriplets++;
+            }
+          }
+        }
+        for (char tripleLetter = 'A'; tripleLetter <= 'Z'; tripleLetter++) {
+          for (int i = 0; i < text.length() - 2; i++) {
+            if (text.charAt(i) == tripleLetter && text.charAt(i + 1) == tripleLetter && text.charAt(i + 2) == tripleLetter) {
+              numTriplets++;
+            }
+          }
+        }
+      } else {
+        numTriplets = -1;
+      }
+      return numTriplets;
+    }
+
     // /*
     // * Exercise 7.
     // *
