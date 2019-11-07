@@ -28,7 +28,7 @@ public class ProblemSet5 {
       System.out.println(ps.countMe("I am an example sentence", 'e'));
       System.out.println(ps.triplets("ccccbbbbaaaa"));
       System.out.println(ps.addMe("oof couch 123456"));
-      // System.out.println(ps.sequence("U"));
+      System.out.println(ps.sequence("U"));
       // System.out.println(ps.intertwine("N"));
       // System.out.println(ps.isPalindrome("G"));
     }
@@ -190,15 +190,15 @@ public class ProblemSet5 {
     }
 
     /*
-    // * Exercise 8.
-    // *
-    // * Given a string, compute the length of the longest sequence.
-    // */
-    //
-    // public long sequence(String text) {
-    //
-    // }
-    //
+    * Exercise 8.
+    *
+    * Given a string, compute the length of the longest sequence.
+    */
+
+    public long sequence(String text) {
+
+    }
+
     // /*
     // * Exercise 9.
     // *
