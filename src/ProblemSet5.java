@@ -28,7 +28,7 @@ public class ProblemSet5 {
       System.out.println(ps.countMe("I am an example sentence", 'e'));
       System.out.println(ps.triplets("ccccbbbbaaaa"));
       System.out.println(ps.addMe("oof couch 123456"));
-      // System.out.println(ps.sequence("U"));
+      System.out.println(ps.sequence("aAabBbBb"));
       // System.out.println(ps.intertwine("N"));
       // System.out.println(ps.isPalindrome("G"));
     }
@@ -195,11 +195,37 @@ public class ProblemSet5 {
     * Given a string, compute the length of the longest sequence.
     */
 
-    // public long sequence(String text) {
-    //
-    // }
+    public long sequence(String text) {
+      long sequenceLength = 0;
+      long longestSequence = 0;
+      long lastSequence = 0;
+      String lastCharacter = "";
+      char sequenceCharacter = 'x';
 
-    // /*
+      if (text != null) {
+        for (int i = 0; i < text.length(); i++) {
+          sequenceCharacter = text.charAt(i);
+          while (sequenceCharacter == text.charAt(i) && i < text.length() - 1) {
+            sequenceLength++;
+            i++;
+            lastCharacter = String.valueOf(text.charAt(i));
+          }
+          if (sequenceLength > longestSequence) {
+            longestSequence = sequenceLength;
+          }
+          lastSequence = sequenceLength;
+          sequenceLength = 0;
+        }
+        if (text.charAt(text.length() - 1) == sequenceCharacter && lastSequence == longestSequence && lastCharacter.equals(String.valueOf(text.charAt(text.length() - 1)))) {
+          longestSequence++;
+        }
+      } else {
+        longestSequence = -1;
+      }
+      return longestSequence;
+    }
+
+    /*
     // * Exercise 9.
     // *
     // * Given two strings, return a new string built by intertwining each of the
