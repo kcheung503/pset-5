@@ -30,7 +30,7 @@ public class ProblemSet5 {
       System.out.println(ps.addMe("oof couch 123456"));
       System.out.println(ps.sequence("aAabBbBb"));
       System.out.println(ps.intertwine("abc", "12345"));
-      // System.out.println(ps.isPalindrome("G"));
+      System.out.println(ps.isPalindrome("racecar"));
     }
 
     /*
@@ -257,12 +257,24 @@ public class ProblemSet5 {
     }
 
     /*
-    // * Exercise 10.
-    // *
-    // * Given a string, determine whether or not it is a palindrome.
-    // */
-    //
-    // public boolean isPalindrome(String text) {
-    //
-    // }
+    * Exercise 10.
+    *
+    * Given a string, determine whether or not it is a palindrome.
+    */
+
+    public boolean isPalindrome(String text) {
+      String reversedText = "";
+      if (text != null) {
+        for (int i = text.length() - 1; i >= 0; i--) {
+          reversedText += text.charAt(i);
+        }
+        if (reversedText.equals(text)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
   }
